@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="gray">#66000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="redSantanderPrimary">#CD0001</color>
-    <color name="redSantanderDark">#9D0808</color>
+    <color name="primaryColor">#CD0001</color>
+    <color name="secundaryColor">#9D0808</color>
 
 </resources>

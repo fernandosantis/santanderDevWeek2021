@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">SantanderDevWeek</string>
-    <string name="more">Sair ( Logout )</string>
-    <string name="content_description_more">Sair do Aplicativo</string>
+    <string name="lbl_saldo_disponivel">Saldo Disponivel</string>
+    <string name="lbl_saldo_limite">Saldo + Limite:</string>
+    <string name="lbl_extrato">Ver extrato</string>
+    <string name="lbl_pagar">pagar</string>
+    <string name="lbl_transferir">transferir</string>
+    <string name="lbl_recarga">recarregar</string>
+    <string name="lbl_cartao_final">Cartão final</string>
+    <string name="it_notifications">Notificações</string>
+    <string name="ic_atualizar_saldo">icone de atualizar saldo</string>
+    <string name="back_red">Fundo App Red</string>
+    <string name="ic_expandir_saldo">Expandir Saldo</string>
+    <string name="ic_pagar">Icone Pagar</string>
+    <string name="ic_transferir">Icone Transferir</string>
+    <string name="ic_recarregar">Icone Recarregar</string>
+    <string name="sec_cartao">Secao Cartao</string>
+    <string name="ic_expandir_cartao">Icone Expandir Cartao</string>
 </resources>
