@@ -19,9 +19,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
-        val doubleReal = DecimalFormat("R$ #,##0.00")
-
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        buscarConta()
+    }
+
+    private fun buscarConta() {
+        val doubleReal = DecimalFormat("R$ #,##0.00")
         mainViewModel.buscarConta().observe(
             this,
             Observer { result ->
