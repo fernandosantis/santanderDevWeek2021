@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SantanderDevWeek</string>
+    <string name="lbl_extrato">View Extract</string>
+    <string name="lbl_pagar">pay</string>
+    <string name="lbl_transferir">transfer</string>
+    <string name="lbl_recarga">recharge</string>
+    <string name="lbl_cartao_final">Final Card</string>
+    <string name="it_notifications">Notifications</string>
+    <string name="ic_expandir_saldo">Expand balance</string>
+    <string name="saudacao">Hello</string>
+    <string name="abr_conta">Ac</string>
+    <string name="abr_agencia">Ag</string>
+    <string name="lbl_saldo_disponivel">" Balance available"</string>
+    <string name="lbl_saldo_limite">Balance + Limit</string>
+</resources>
