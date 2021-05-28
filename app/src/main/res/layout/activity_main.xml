@@ -1,154 +1,339 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/menu_top"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:title="@string/app_name"
+        app:titleTextColor="@android:color/white"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:liftOnScroll="true">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            style="@style/Widget.MaterialComponents.Toolbar.Primary"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:menu="@menu/top_app_bar"
-            app:navigationIcon="@drawable/ic_menu_24dp"
-            app:title="Santander" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <com.google.android.material.progressindicator.LinearProgressIndicator
-        android:id="@+id/linearProgressIndicator"
-        android:layout_width="match_parent"
+    <ImageView
+        android:contentDescription="@string/back_red"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="16:8"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="?attr/colorPrimary"
+    />
+    <TextView
+        android:id="@+id/tv_user"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/menu_top"
-        android:indeterminate="true" />
-
+        android:text="Olá, Fernando"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_margin="18dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@android:color/white"
         />
 
-    <LinearLayout
-        android:id="@+id/linearHome"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tv_agence"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/redSantanderPrimary"
-        app:layout_constraintTop_toBottomOf="@id/linearProgressIndicator"
+        android:text="Ag 0000"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_user"
+        app:layout_constraintStart_toStartOf="@id/tv_user"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/tv_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cc 0000000-0"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_user"
+        app:layout_constraintStart_toEndOf="@id/tv_agence"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_saldo_extrato"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_agence"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16sp">
-        <TextView
-            android:id="@+id/txt_nome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Olá, Fernando"
-            android:textColor="@color/white"
-            android:textSize="20sp"/>
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        app:cardElevation="2dp">
 
-        <TextView
-            android:id="@+id/txt_conta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ag 2030 Cc 01097954-4"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/linearSepara"
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:orientation="vertical"
-        android:background="@color/redSantanderPrimary"
-        app:layout_constraintTop_toBottomOf="@id/linearHome">
-    </LinearLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_marginEnd="16dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:contentDescription="@string/ic_atualizar_saldo"
+                android:id="@+id/iv_update_saldo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_update"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <TextView
+                android:id="@+id/lbl_saldo_disponivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/iv_update_saldo"
+                app:layout_constraintStart_toEndOf="@id/iv_update_saldo"
+                app:layout_constraintBottom_toBottomOf="@id/iv_update_saldo"
+                android:layout_marginStart="16dp"
+                android:textStyle="bold"
+                android:text="@string/lbl_saldo_disponivel"/>
+
+            <ImageView
+                android:contentDescription="@string/ic_expandir_saldo"
+                android:id="@+id/iv_expand_saldo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_expand_less"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_saldo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/iv_update_saldo"
+                app:layout_constraintStart_toStartOf="@id/iv_update_saldo"
+                android:textStyle="bold"
+                android:text="R$ 1.000,00"
+                android:layout_marginTop="32dp"
+                android:textSize="24sp"
+                />
+            <TextView
+                android:id="@+id/lbl_saldo_limite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_saldo"
+                app:layout_constraintStart_toStartOf="@id/tv_saldo"
+                android:textStyle="bold"
+                android:text="@string/lbl_saldo_limite"
+                />
+            <TextView
+                android:id="@+id/tv_saldo_limite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_saldo"
+                app:layout_constraintStart_toEndOf="@id/lbl_saldo_limite"
+                android:textStyle="bold"
+                android:text="R$ 2.000,00"
+                android:layout_marginStart="8dp"
+                />
+            <View
+                android:id="@+id/v_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toBottomOf="@id/lbl_saldo_limite"
+                android:background="@android:color/darker_gray"
+                android:layout_margin="16dp"/>
+
+            <TextView
+                android:id="@+id/tv_ver_extrato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/v_divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textStyle="bold"
+                android:text="@string/lbl_extrato"
+                android:textColor="@color/secundaryColor"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_pagar"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@id/linearHome"
-        android:layout_marginTop="-32dp">
-        <LinearLayout
-            android:id="@+id/linearSaldo"
+        app:layout_constraintTop_toBottomOf="@id/card_saldo_extrato"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/card_transferir">
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            >
-        <ImageButton
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_sync"
-            ></ImageButton>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:gravity="center"
-            android:text="Saldo disponível"/>
+            android:layout_height="match_parent">
+            <ImageView
+                android:contentDescription="@string/ic_pagar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iv_pagar"
+                android:src="@drawable/ic_pay"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/lbl_pagar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+            />
+            <TextView
+                android:id="@+id/lbl_pagar"
+                android:text="@string/lbl_pagar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/iv_pagar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"               />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </LinearLayout>
-        <TextView
-            android:id="@+id/txt_Saldo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="R$ 58.346,08"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginStart="8dp"
-            app:layout_constraintTop_toBottomOf="@id/linearSaldo"
-            android:layout_marginLeft="8dp" />
-        <TextView
-            android:id="@+id/txt_SaldoTotal"
-            android:layout_marginStart="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Saldo + Limite: R$ 78.346,08"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/txt_Saldo"/>
-        <View
-            android:id="@+id/separa"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/gray"
-            app:layout_constraintTop_toBottomOf="@id/txt_SaldoTotal"/>
 
-        <TextView
-            android:id="@+id/txtExtrato"
-            android:layout_marginStart="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ver extrato"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/redSantanderPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:padding="32dp"
-            app:layout_constraintTop_toBottomOf="@id/separa"
-            android:layout_marginLeft="8dp" />
-        <View
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_transferir"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+
+        app:layout_constraintTop_toBottomOf="@id/card_saldo_extrato"
+        app:layout_constraintStart_toEndOf="@id/card_pagar"
+        app:layout_constraintEnd_toStartOf="@id/card_recarga">
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/gray"
-            app:layout_constraintTop_toBottomOf="@id/txtExtrato"/>
+            android:layout_height="match_parent">
+            <ImageView
+                android:contentDescription="@string/ic_transferir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iv_transferir"
+                android:src="@drawable/ic_transfer"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/lbl_transferir"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                />
+            <TextView
+                android:id="@+id/lbl_transferir"
+                android:text="@string/lbl_transferir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/iv_transferir"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"               />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_recarga"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toBottomOf="@id/card_saldo_extrato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/card_transferir">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:contentDescription="@string/ic_recarregar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iv_recarga"
+                android:src="@drawable/ic_recharge"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/lbl_recarga"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <TextView
+                android:id="@+id/lbl_recarga"
+                android:text="@string/lbl_recarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/iv_recarga"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"               />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:contentDescription="@string/sec_cartao"
+        android:id="@+id/iv_cartao_final"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_margin="16dp"
+        android:background="@color/primaryColor"
+        app:layout_constraintTop_toBottomOf="@id/card_pagar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <TextView
+        android:id="@+id/lbl_cartao_final"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_cartao_final"
+        app:layout_constraintStart_toStartOf="@id/iv_cartao_final"
+        app:layout_constraintTop_toTopOf="@id/iv_cartao_final"
+        app:layout_constraintBottom_toBottomOf="@id/iv_cartao_final"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/txt_cartao_final"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1234"
+        app:layout_constraintStart_toEndOf="@id/lbl_cartao_final"
+        app:layout_constraintTop_toTopOf="@id/iv_cartao_final"
+        app:layout_constraintBottom_toBottomOf="@id/iv_cartao_final"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        />
+    <ImageView
+        android:contentDescription="@string/ic_expandir_cartao"
+        android:id="@+id/iv_expand_cartao_final"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_expand_more"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="@id/iv_cartao_final"
+        app:layout_constraintBottom_toBottomOf="@id/iv_cartao_final"
+        app:layout_constraintEnd_toEndOf="@id/iv_cartao_final"
+        app:tint="@android:color/white"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.SantanderDevWeek" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/redSantanderPrimary</item>
-        <item name="colorPrimaryVariant">@color/redSantanderDark</item>
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/secundaryColor</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
