@@ -16,4 +16,7 @@
     <string name="ic_recarregar">Icone Recarregar</string>
     <string name="sec_cartao">Secao Cartao</string>
     <string name="ic_expandir_cartao">Icone Expandir Cartao</string>
+    <string name="saudacao">Olá</string>
+    <string name="abr_conta">Cc</string>
+    <string name="abr_agencia">Ag</string>
 </resources>
